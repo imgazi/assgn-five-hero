@@ -18,8 +18,8 @@ function showElementsById(id) {
 }
 let boss = 0;
 function green(event) {
-    
-    const ticket = event.innerText  
+
+    const ticket = event.innerText
     boss += 1;
     let seatLeft = 8 - boss;
     const price = 550;
@@ -28,12 +28,12 @@ function green(event) {
         event.style.backgroundColor = "#1DD100";
         ticketsAdded(ticket);
         seatCount(boss);
-        updateSeatRemaining(seatLeft);  
+        updateSeatRemaining(seatLeft);
     }
-    else{
+    else {
         alert('One person cannot select more than 4 seats')
     }
-    
+
 }
 
 function ticketsAdded(ticket) {
@@ -61,24 +61,38 @@ function ticketsAdded(ticket) {
     div.appendChild(p2);
     div.appendChild(p3);
     selectedTickets.appendChild(div);
-     
+
     updateTotalCost(price);
 
 }
 
 
-function updateTotalCost(value){
-    let sum= parseInt(document.getElementById('total-price').innerText);
+function updateTotalCost(value) {
+    let sum = parseInt(document.getElementById('total-price').innerText);
     sum = sum + parseInt(value);
-     
+
     document.getElementById('total-price').innerText = sum;
     console.log(updateGrandTotal())
-    
+
 }
-function updateGrandTotal(){
-    let sum=(document.getElementById('total-price').innerText);
-    document.getElementById('grand-total').innerText=sum;
-     
+function updateGrandTotal(status) {
+    let sum = (document.getElementById('total-price').innerText);
+
+    if (status == undefined) {
+        document.getElementById('grand-total').innerText = sum;
+    }
+
+    else {
+        const couponCode = document.getElementById("coupon-code").value;
+        if (couponCode == "NEW17" || couponCode == "Couple 20") {
+            const discount = sum * .2;
+            document.getElementById('grand-total').innerText = sum - discount;
+            document.getElementById("Coupon-container").classList.add('hidden');
+        }
+        else{
+            alert('Enter a valid coupon');
+        }
+    }
 
 }
 
