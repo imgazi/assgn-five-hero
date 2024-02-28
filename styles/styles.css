@@ -1,22 +1,19 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap')
-
-  .raleway-<uniquifier> {
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap') .raleway-<uniquifier> {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
-  }
-  
-  .font-raleway{
+}
+
+.font-raleway {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
 
-  }
+}
 
-  .banner {
+.banner {
     background-image: url(../images/banner.png);
     width: auto;
     height: 600px;
@@ -25,3 +22,7 @@
     background-position: center center;
 }
 
+.btn {
+    font-weight: 500;
+    
+}
